@@ -1,0 +1,83 @@
+GET http://localhost:8000/
+
+###
+GET http://localhost:8000/hello
+
+###
+GET http://localhost:8000/testQueryString?p1=bb&p2=4321
+
+###
+POST http://localhost:8000/hello
+
+###
+POST http://localhost:8000/post-testQueryString?p1=aa&p2=1234
+
+###
+POST http://localhost:8000/post-json
+# json 형식으로 요청
+Content-Type: application/json; charset=UTF-8
+# body에 담기 위해선 한 줄 띄움
+
+{
+  "name": "이진석짱",
+  "age": 29
+}
+
+
+###
+POST http://localhost:8000/save_game
+Content-Type: application/json; charset=UTF-8
+
+//{
+//  "game_name": "League Of Legend",
+//  "game_peoples": 40234323,
+//  "game_since": "2015"
+//}
+//{
+//  "game_name": "Maple Story",
+//  "game_peoples": 53423412,
+//  "game_since": "2005"
+//}
+{
+  "game_name": "Over Watch",
+  "game_peoples": 12345456,
+  "game_since": "2019"
+}
+
+
+###
+GET http://localhost:8000/list
+
+
+###
+GET http://localhost:8000/list/7
+
+
+###
+PUT http://localhost:8000/1
+Content-Type: application/json; charset=UTF-8
+
+{
+  "id": 1,
+  "game_name": "리그 오브 레전드입니다.",
+  "game_peoples": 1234,
+  "game_since": 4321
+}
+
+
+
+###
+PUT http://localhost:8000/update_game/1
+Content-Type: application/json; charset=UTF-8
+
+{
+  "id": 1,
+  "game_name": "롤",
+  "game_peoples": 7777,
+  "game_since": 1996
+}
+
+
+###
+DELETE http://localhost:8000/delete_game/1
+
